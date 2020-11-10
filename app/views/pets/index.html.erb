@@ -1,0 +1,24 @@
+<div class="banner">
+  <h1>The Petsitters</h1>
+</div>
+
+
+<% if @pets.any? %>
+  <div class="container">
+    <% @pets.each do |pet| %>
+      <div class="col">
+      <%= link_to pet_path(pet.id) do %>
+        <div class="card">
+          <h3>Hello, my name's <%= pet.name %>!</h3>
+          <p>I am a <%= pet.species %></p>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+<% else %>
+    <div class="container">
+      <h4 class="header">Oh no! Such empty! There are no pets to take care of yet...</h4>
+    </div>
+<% end %>
