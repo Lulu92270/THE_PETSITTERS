@@ -14,7 +14,7 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     if @pet.save
-      redirect_to pet_path(@pet), notice: "Welcome to #{@pet.name} in the wonderfull community of The Petsitter!"
+      redirect_to pet_path(@pet), notice: "Welcome to #{@pet.name} in the wonderfull community of The Petsitters!"
     else
       render 'new'
     end

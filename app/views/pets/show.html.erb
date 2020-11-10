@@ -2,7 +2,9 @@
   <h1><%= @pet.name %></h1>
   <%= link_to "Back to all pets", root_path %>
   <br>
+  <% if @pet.photo.attached? %>
   <%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
+  <% end %>
 
 
   <div class="row">
@@ -14,14 +16,11 @@
             <th>Species</th>
             <th>Name of my owner</th>
           </thead>
-          <% @pet.each do |pet| %>
             <tr>
-              <td><%= pet.name %></td>
-              <td><%= pet.species %></td>
-              <td><%= pet.pet_owner_id %></td>
-              <td><%= pet.photo %></td>
+              <td><%= @pet.name %></td>
+              <td><%= @pet.species %></td>
+              <td><%= @pet.pet_owner_id %></td>
             </tr>
-          <% end %>
         </tbody>
       </table>
     </div>
