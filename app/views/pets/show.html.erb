@@ -3,7 +3,7 @@
   <%= link_to "Back to all pets", root_path %>
   <br>
   <% if @pet.photo.attached? %>
-  <%= cl_image_tag @pet.photo, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
   <% end %>
 
 
@@ -19,7 +19,7 @@
             <tr>
               <td><%= @pet.name %></td>
               <td><%= @pet.species %></td>
-              <td><%= @pet.pet_owner_id %></td>
+              <td><%= @pet.pet_owner.name %></td>
             </tr>
         </tbody>
       </table>

@@ -1,4 +1,10 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
+<div class="banner">
+  <h1>The Petsitters</h1>
+  <br>
+  <div class="logo">
+    <%= link_to pets_path do %>
+    <%= cl_image_tag("bichon2_gog3zx", width: 400, height: 400, crop: :fill) %>
+    <% end %>
+  </div>
+</div>
 
