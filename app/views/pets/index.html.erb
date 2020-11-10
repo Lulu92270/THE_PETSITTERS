@@ -9,6 +9,7 @@
       <div class="col">
       <%= link_to pet_path(pet.id) do %>
         <div class="card">
+          <%= cl_image_tag("tj9fpsysme14q0tarojl", width: 400, height: 300, crop: :fill) %>
           <h3>Hello, my name's <%= pet.name %>!</h3>
           <p>I am a <%= pet.species %></p>
         </div>
