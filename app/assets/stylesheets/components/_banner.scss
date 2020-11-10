@@ -30,8 +30,10 @@
     animation: float 6s ease-in-out infinite;
     img { width: 100%; height: auto; }
   }
-  .h1 {
-    font-size: 60px;
+    h1 {
+    font-size: 100px;
+    font-weight: bolder;
+    text-shadow: 3px 3px #c0d1d8;
   }
 }
 
