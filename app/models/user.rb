@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :pets
+  has_one_attached :photo
 
   ROLE = ["petsitter", "petowner"]
   validates :name, :address, presence: true
