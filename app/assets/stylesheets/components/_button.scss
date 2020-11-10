@@ -1,8 +1,9 @@
 .btn {
-  background-color: light-blue;
+  background-color: $light-blue;
   border-radius: 15px;
   margin: 16px;
   width: 137px;
+
     &:hover {
       box-shadow: 4px 4px 1px black;
     }
