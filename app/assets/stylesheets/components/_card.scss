@@ -1,0 +1,9 @@
+.card {
+  background-color: light-blue;
+  border-radius: 5px;
+  box-shadow: 4px 4px 1px dark-gray;
+  height: 300px;
+    &:hover {
+      background-color: light-gray;
+    }
+}
