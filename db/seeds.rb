@@ -1,6 +1,4 @@
 require "open-uri"
-require "byebug"
-
 
 puts "destroying all Bookings..."
 Booking.destroy_all
