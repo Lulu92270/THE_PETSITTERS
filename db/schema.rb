@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_11_10_105222) do
     t.bigint "pet_owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "photo"
     t.index ["pet_owner_id"], name: "index_pets_on_pet_owner_id"
   end
 

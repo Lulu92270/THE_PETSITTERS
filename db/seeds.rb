@@ -4,10 +4,11 @@ puts "destroying all Bookings..."
 Booking.destroy_all
 
 puts "destroying all Users with it's pets...\n"
+Pet.destroy_all
 User.destroy_all
 
-# i = 1
-# pets_img = []
+i = 1
+pets_img = []
 
 10.times do
   pets_img << Cloudinary::Uploader.upload("pet#{i}.jpg")['url']
