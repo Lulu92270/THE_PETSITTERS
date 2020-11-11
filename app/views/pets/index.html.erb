@@ -13,7 +13,7 @@
       <div class="col-4">
       <div class="card">
         <%= link_to pet_path(pet.id) do %>
-          <%= cl_image_tag(pet.photo.key, class: "w-100", crop: :fill) %>
+          <%= cl_image_tag(pet.photo.key, class: "w-100") %>
         <% end %>
         <h3>Hello, I'm <%= pet.name.capitalize %>!</h3>
         <p>I am a <%= pet.species %></p>
