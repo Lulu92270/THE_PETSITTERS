@@ -1,8 +1,11 @@
 <div class="banner">
   <h1>The Petsitters</h1>
+  <div class="container text-center btn-effect ">
+    <h4><%= link_to 'Add my pet!', new_pet_path%></h4>
+  </div>
 </div>
 
-
+<br>
 <% if @pets.any? %>
   <div class="container">
     <div class="row">
@@ -26,10 +29,3 @@
       <h4 class="header">Oh no! Such empty! There are no pets to take care of yet...</h4>
     </div>
 <% end %>
-
-
-<br>
-
-    <div class="container text-center ">
-        <h4><%= link_to 'Add my pet!', new_pet_path%></h4>
-    </div>

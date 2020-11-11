@@ -3,7 +3,13 @@
   border-radius: 15px;
   margin: 16px;
   width: 137px;
-
+    h4 {
+      font-size: 18px;
+      padding: 8px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
     &:hover {
       box-shadow: 4px 4px 1px black;
     }

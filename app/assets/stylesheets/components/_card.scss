@@ -24,12 +24,12 @@
 .card {
   background-color: light-gray;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px dark-gray;
   text-align: center;
     &:hover {
       background-color: light-gray;
       box-shadow: 4px 4px 1px dark-gray;
-      box-shadow: 5px 15px 0px rgba(0,0,0,0.6);
+      box-shadow: 5px 5px 0px rgba(0,0,0,0.6);
       transform: translatey(0px);
       animation: float 2s ease-in-out infinite;
     }
