@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 2020_11_10_105222) do
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.string "species"
-    t.bigint "user_id", null: false
+    t.bigint "pet_owner_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "photo"
-    t.index ["user_id"], name: "index_pets_on_user_id"
+    t.index ["pet_owner_id"], name: "index_pets_on_pet_owner_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,5 +74,5 @@ ActiveRecord::Schema.define(version: 2020_11_10_105222) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "pets"
   add_foreign_key "bookings", "users"
-  add_foreign_key "pets", "users"
+  add_foreign_key "pets", "users", column: "pet_owner_id"
 end
