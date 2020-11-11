@@ -1,9 +1,41 @@
+// .all-cards {
+//   display: grid;
+//   grid-template-columns: 1fr 1fr 1fr;
+//   grid-gap: 16px;
+//   margin: 16px;
+//   flex-grow: 1;
+// }
+
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+    transform: translatey(0px);
+  }
+}
+
 .card {
-  background-color: light-blue;
+  background-color: light-gray;
   border-radius: 5px;
-  box-shadow: 4px 4px 1px dark-gray;
-  height: 300px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  font-size: 22px;
     &:hover {
       background-color: light-gray;
+      box-shadow: 4px 4px 1px dark-gray;
+      box-shadow: 5px 15px 0px rgba(0,0,0,0.6);
+      transform: translatey(0px);
+      animation: float 2s ease-in-out infinite;
+    }
+    h3 {
+      font-weight: bolder;
     }
 }
+
+

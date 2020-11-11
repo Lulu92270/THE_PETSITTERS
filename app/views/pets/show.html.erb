@@ -1,5 +1,5 @@
 <div class="container">
-  <h1><%= @pet.name %></h1>
+  <h1><%= @pet.name.capitalize %></h1>
   <%= link_to "Back to all pets", root_path %>
   <br>
   <% if @pet.photo.attached? %>
@@ -17,9 +17,9 @@
             <th>Name of my owner</th>
           </thead>
             <tr>
-              <td><%= @pet.name %></td>
+              <td><%= @pet.name.capitalize %></td>
               <td><%= @pet.species %></td>
-              <td><%= @pet.pet_owner.name %></td>
+              <td><%= @pet.pet_owner.name.capitalize %></td>
             </tr>
         </tbody>
       </table>

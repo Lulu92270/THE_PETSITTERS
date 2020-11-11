@@ -20,6 +20,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
   .logo {
     width: 400px;
     height: 400px;
@@ -27,7 +28,7 @@
     box-shadow: 2px 2px 7px light-gray;
     box-shadow: 5px 15px 0px rgba(0,0,0,0.6);
     transform: translatey(0px);
-    animation: float 6s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
     img { width: 100%; height: auto; }
   }
     h1 {
@@ -37,5 +38,13 @@
   }
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
 
+.sticky + .content {
+  padding-top: 102px;
+}
 
