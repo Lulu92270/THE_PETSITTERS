@@ -1,10 +1,10 @@
 require "open-uri"
 
-puts "destroying all Bookings..."
-Booking.destroy_all
+# puts "destroying all Bookings..."
+# Booking.destroy_all
 
-puts "destroying all Users with it's pets...\n"
-User.destroy_all
+# puts "destroying all Users with it's pets...\n"
+# User.destroy_all
 
 i = 1
 pets_img = []
