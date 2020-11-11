@@ -14,6 +14,7 @@ class PetsController < ApplicationController
 
   def create
     @pet = Pet.new(pet_params)
+    @pet.pet_owner = current_user
     if @pet.save
       redirect_to pet_path(@pet), notice: "Welcome to #{@pet.name} in the wonderfull community of The Petsitters!"
     else
@@ -24,6 +25,6 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :user_id, :photo)
+    params.require(:pet).permit(:name, :species, :photo)
   end
 end
