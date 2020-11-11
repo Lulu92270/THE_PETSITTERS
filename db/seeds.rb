@@ -6,8 +6,8 @@ Booking.destroy_all
 puts "destroying all Users with it's pets...\n"
 User.destroy_all
 
-# i = 1
-# pets_img = []
+i = 1
+pets_img = []
 
 10.times do
   pets_img << Cloudinary::Uploader.upload("pet#{i}.jpg")['url']
