@@ -10,7 +10,7 @@
   <div class="container">
     <div class="row">
       <% @pets.each do |pet| %>
-      <div class="col">
+      <div class="col-4">
       <div class="card">
         <%= link_to pet_path(pet.id) do %>
           <%= cl_image_tag(pet.photo.key, class: "w-100", crop: :fill) %>
