@@ -3,7 +3,7 @@ class CreatePets < ActiveRecord::Migration[6.0]
     create_table :pets do |t|
       t.string :name
       t.string :species
-      t.references :pet_owner, index: true, foreign_key: { to_table: :users }
+      t.references :user
 
       t.timestamps
     end
