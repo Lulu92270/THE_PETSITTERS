@@ -22,7 +22,8 @@ i = 0
   s = 0
   2.times do
     file = URI.open(pets_img[i])
-    pet = Pet.new(name: Faker::Creature::Dog.name, species: ["dog", "cat"].sample, pet_owner: user)
+    pet = Pet.new(name: Faker::Creature::Dog.name, species: ["dog", "cat"].sample) #, pet_owner: user)
+    pet.pet_owner = user
     pet.photo.attach(io: file, filename: 'toto.jpeg', content_type: 'image/jpeg')
     pet.save!
     my_pet = "A #{pet.species.capitalize} named #{pet.name}"
@@ -45,6 +46,6 @@ end
 file = URI.open('https://omg.blog/wp-content/uploads/2018/09/yorikokoro.jpg')
 user = User.create(email: "lola@lola.com", password: "123456", role: "petowner", name: "lola", address: "Lisbonne")
 
-pet = Pet.new(name: "toto", species: "dog", pet_owner: User.first)
-pet.photo.attach(io: file, filename: 'toto.jpeg', content_type: 'image/jpeg')
-pet.save!
+# pet = Pet.new(name: "toto", species: "dog", pet_owner: User.first)
+# pet.photo.attach(io: file, filename: 'toto.jpeg', content_type: 'image/jpeg')
+# pet.save!
