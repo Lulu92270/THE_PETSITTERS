@@ -1,6 +1,6 @@
 <div class="container">
   <h1><%= @pet.name.capitalize %></h1>
-  <%= link_to "Back to all pets", root_path %>
+  <%= link_to "Back to all pets", pets_path %>
   <br>
   <% if @pet.photo.attached? %>
   <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
