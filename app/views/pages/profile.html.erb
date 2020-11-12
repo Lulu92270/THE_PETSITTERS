@@ -32,7 +32,7 @@
           <div class="col-4">
             <div class="card">
                 <%= cl_image_tag(user_booking.pet.photo.key, class: "w-100") %>
-              <h3>Hello, I'm <%= pet.name.capitalize %>!</h3>
+              <h3>Hello, I'm <%= user_booking.pet.name.capitalize %>!</h3>
               <p>I am booked on <%= user_booking.date %></p>
             </div>
           </div>
