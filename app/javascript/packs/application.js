@@ -33,21 +33,8 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
 });
 
-// var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-import 'mapbox-gl/dist/mapbox-gl';
+import { initMapbox } from '../plugins/init_mapbox';
 
-const mapElement = document.getElementById('map');
-
-mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-
-const map = new mapboxgl.Map({
-  container: 'map',
-  style: 'mapbox://styles/mapbox/streets-v11'
-});
-
-const markers = JSON.parse(mapElement.dataset.markers);
-  markers.forEach((marker) => {
-    new mapboxgl.Marker()
-      .setLngLat([ marker.lng, marker.lat ])
-      .addTo(map);
-  });
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
