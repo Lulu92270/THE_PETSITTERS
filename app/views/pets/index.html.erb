@@ -1,46 +1,44 @@
-
-  <div class="banner sticky">
-    <h1>The Petsitters</h1>
-    <div class="container text-center btn-effect ">
-      <h4><%= link_to 'Add my pet!', new_pet_path%></h4>
-    </div>
+<div class="banner sticky">
+  <h1>The Petsitters</h1>
+  <div class="container text-center btn-effect ">
+    <h4><%= link_to 'Add my pet!', new_pet_path%></h4>
   </div>
+</div>
 
 <br>
 <br>
 <br>
 <br>
 <br>
-  <div class="mt-5">
+
+<div class="mt-5">
   <% if @pets.any? %>
     <div class="container">
       <div class="row pb-5 mb-5">
         <% @pets.each do |pet| %>
-        <div class="col-4">
-        <div class="card">
-          <%= link_to pet_path(pet.id) do %>
-            <%= cl_image_tag(pet.photo.key, class: "w-100") %>
-          <% end %>
-          <h3>Hello, I'm <%= pet.name.capitalize %>!</h3>
-          <p>I am a <%= pet.species %></p>
-        </div>
-
+          <div class="col-4">
+            <div class="card">
+              <%= link_to pet_path(pet.id) do %>
+                <%= cl_image_tag(pet.photo.key, class: "w-100") %>
+              <% end %>
+              <h3>Hello, I'm <%= pet.name.capitalize %>!</h3>
+              <p>I am a <%= pet.species %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
-          <% end %>
     </div>
-    </div>
-
   <% else %>
       <div class="container text-center">
         <h4 class="header">Oh no! Such empty! There are no pets to take care of yet...</h4>
       </div>
   <% end %>
-  </div>
+</div>
 
-    <div class="footer-effect">
-      <p>Find us on :</p>
-      <div class="footer-links">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-      </div>
-    </div>
+<div class="footer-effect">
+  <p>Find us on :</p>
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+  </div>
+</div>

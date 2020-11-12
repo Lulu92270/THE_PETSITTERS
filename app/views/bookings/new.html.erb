@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+
+      <% if @pet.photo.attached? %>
+        <div>
+          <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
+        </div>
+      <% end %>
+      <%# <% raise %>
+      <h1>When do you want to book <%= @pet.name %> ? </h1>
+
+      <%= simple_form_for [ @pet, @booking ] do |f| %>
+        <%= f.input :date %>
+
+        <%= f.button :submit, class: 'btn' %>
+      <% end %>
+    </div>
+  </div>
+</div>
