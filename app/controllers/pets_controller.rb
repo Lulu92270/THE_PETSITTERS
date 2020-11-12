@@ -6,6 +6,12 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @markers = @pet.geocoded.map do |pet|
+      {
+        lat: pet.latitude,
+        lng: pet.longitude
+      }
+    end
   end
 
   def new
