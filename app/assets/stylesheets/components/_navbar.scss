@@ -39,6 +39,11 @@
   flex-grow: 0;
 }
 
+.dropdown-menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .one { width: 50px; }
 .two { width: 40px; }
 .three { width: 30px;}
