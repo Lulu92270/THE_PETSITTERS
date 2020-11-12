@@ -22,7 +22,7 @@
                 <%= cl_image_tag(pet.photo.key, class: "w-100") %>
               <% end %>
               <h3>Hello, I'm <%= pet.name.capitalize %>!</h3>
-              <p>I am a <%= pet.species %></p>
+              <p>I am <strong><%= pet.pet_owner.name.capitalize%></strong>'s <%= pet.species %></p>
             </div>
           </div>
         <% end %>
