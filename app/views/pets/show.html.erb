@@ -1,11 +1,10 @@
 <div class="container">
   <h1><%= @pet.name.capitalize %></h1>
-  <%= link_to "Back to all pets", pets_path %>
+    <%= link_to "Back to all pets", pets_path %>
   <br>
   <% if @pet.photo.attached? %>
-  <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
+    <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
   <% end %>
-
 
   <div class="row">
     <div class="col-sm-12 col-md-6">
@@ -24,6 +23,10 @@
         </tbody>
       </table>
     </div>
+  </div>
+
+  <div>
+    <strong><%= link_to "Book this pet 🐶", new_pet_booking_path(@pet) %></strong>
   </div>
 
 </div>
