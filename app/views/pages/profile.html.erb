@@ -1,12 +1,30 @@
 <div class="banner">
-  <h1>My Profile: I'm a <%= @user.role %></h1>
-  <h2>email: <%= @user.email %></h2>
+  <h1>The Petsitters</h1>
+  <h3>Welcome, <%= current_user.name.capitalize %>!</h3>
+  <br>
+  <h4>Your profile status: <%= @user.role %></h4>
+</div>
+
+
+
+<div class="container d-flex justify-content-around p-4">
   <div class="container text-center btn-effect ">
     <h4><%= link_to 'Back to pets list', pets_path%></h4>
   </div>
+  <div class="form-row align-items-center">
+    <%= simple_form_for current_user, url: change_role_path do |f| %>
+     <%= f.input :role, label: "Your status", collection: ["petsitter", "petowner"], as: :radio_buttons %>
+     <%= f.button :submit, class: 'btn' %>
+    <% end %>
+  </div>
+    <% if @user.role === "petowner" %>
+      <div class="container text-center btn-effect ">
+      <h4><%= link_to 'Add my pet!', new_pet_path%></h4>
+    <% end %>
+  <div>
 </div>
 
-<div class="mt-5">
+<div class="booking mt-5">
   <% if @user_bookings.any? %>
     <div class="container">
       <div class="row pb-5 mb-5">
@@ -27,3 +45,13 @@
       </div>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
+
+
