@@ -8,20 +8,24 @@
 
 
 <div class="container d-flex justify-content-around p-4">
-  <div class="container text-center btn-effect ">
-    <h4><%= link_to 'Back to pets list', pets_path%></h4>
-  </div>
-  <div class="form-row align-items-center">
+  <%= link_to pets_path do %>
+    <div class="text-center btn-effect">
+      <h4>Back to pets list</h4>
+    </div>
+  <% end %>
+  <div class="form text-center">
     <%= simple_form_for current_user, url: change_role_path do |f| %>
-     <%= f.input :role, label: "Your status", collection: ["petsitter", "petowner"], as: :radio_buttons %>
-     <%= f.button :submit, class: 'btn' %>
+      <%= f.input :role, label: "Your status", collection: ["petsitter", "petowner"], as: :radio_buttons %>
+      <%= f.button :submit, class: 'btn effect' %>
     <% end %>
   </div>
-    <% if @user.role === "petowner" %>
-      <div class="container text-center btn-effect ">
-      <h4><%= link_to 'Add my pet!', new_pet_path%></h4>
+  <% if @user.role === "petowner" %>
+    <%= link_to new_pet_path do %>
+      <div class="text-center btn-effect">
+        <h4>Add my pet!</h4>
+      </div>
     <% end %>
-  <div>
+  <% end %>
 </div>
 
 <div class="booking mt-5">
