@@ -47,7 +47,7 @@ puts "\nCreating Bookings...\n"
 end
 
 file = URI.open('https://omg.blog/wp-content/uploads/2018/09/yorikokoro.jpg')
-user = User.create(email: "lola@lola.com", password: "123456", role: "petowner", name: "lola", address: "Lisbonne")
+user = User.create(email: "lola@lola.com", password: "123456", role: "Pet owner", name: "lola", address: "Lisbonne")
 
 pet = Pet.new(name: "toto", species: "dog", pet_owner: User.first)
 pet.photo.attach(io: file, filename: 'toto.jpeg', content_type: 'image/jpeg')

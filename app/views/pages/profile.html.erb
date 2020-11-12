@@ -15,11 +15,11 @@
   <% end %>
   <div class="form text-center">
     <%= simple_form_for current_user, url: change_role_path do |f| %>
-      <%= f.input :role, label: "Your status", collection: ["petsitter", "petowner"], as: :radio_buttons %>
+      <%= f.input :role, label: "Your status", collection: ["Pet sitter", "Pet owner"], as: :radio_buttons %>
       <%= f.button :submit, class: 'btn effect' %>
     <% end %>
   </div>
-  <% if @user.role === "petowner" %>
+  <% if @user.role === "Pet owner" %>
     <%= link_to new_pet_path do %>
       <div class="text-center btn-effect">
         <h4>Add my pet!</h4>
