@@ -2,12 +2,14 @@
   <h1><%= @pet.name.capitalize %></h1>
     <%= link_to "Back to all pets", pets_path %>
   <br>
-  <% if @pet.photo.attached? %>
+  <div class="d-flex m-2 p-2">
+    <% if @pet.photo.attached? %>
     <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
   <% end %>
+  </div>
 
-  <div class="row">
-    <div class="col-sm-12 col-md-6">
+
+  <div class="row p-2 m-2">
       <table class="table table-bordered">
         <ul>
           <li>Name : <%= @pet.name.capitalize %></li>
@@ -15,18 +17,25 @@
           <li>Name of my owner : <%= @pet.pet_owner.name.capitalize %></li>
         </ul>
       </table>
-    </div>
-  </div>
-  
-  <div
-    id="map"
-    style="width: 100%; height: 600px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <div>
-    <strong><%= link_to "Book this pet 🐶", new_pet_booking_path(@pet) %></strong>
-  </div>
+    <div
+      id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+<div class="d-flex justify-content-center m-2 p-2">
+    <%= link_to pets_path do %>
+    <div class="text-center btn-effect">
+      <h4>Book this pet 🐶</h4>
+    </div>
+  <% end %>
+</div>
+
+
+
+
 
 

@@ -9,6 +9,9 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10',
+      center: {lat:38.7223, lng:-9.11},
+      zoom: 12,
+      pixelRatio: window.devicePixelRatio || 1
     });
 
     const marker = JSON.parse(mapElement.dataset.markers);
