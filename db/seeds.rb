@@ -16,9 +16,11 @@ pets_img = []
   i += 1
 end
 
+ADDRESS_ARRAY = ["Alfama, Lisbon", "Graça, Lisbon", "Marques do Pombal, Lisbon", "Bario Alto, Lisbon", "Cascais" ]
+
 i = 0
-5.times do
-  user = User.create!(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::FunnyName.unique.name, role: ["petowner", "petsitter"].sample, address: Faker::Address.unique.city )
+ADDRESS_ARRAY.each do |address|
+  user = User.create!(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::FunnyName.unique.name, role: ["petowner", "petsitter"].sample, address: address )
   puts "\n#{user.name.capitalize} is a #{user.role.upcase} and has 2 pets: "
   s = 0
   2.times do

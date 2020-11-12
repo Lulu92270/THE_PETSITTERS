@@ -9,24 +9,24 @@
   <div class="row">
     <div class="col-sm-12 col-md-6">
       <table class="table table-bordered">
-        <tbody>
-          <thead>
-            <th>Name</th>
-            <th>Species</th>
-            <th>Name of my owner</th>
-          </thead>
-            <tr>
-              <td><%= @pet.name.capitalize %></td>
-              <td><%= @pet.species %></td>
-              <td><%= @pet.pet_owner.name.capitalize %></td>
-            </tr>
-        </tbody>
+        <ul>
+          <li>Name : <%= @pet.name.capitalize %></li>
+          <li>Species : <%= @pet.species %></li>
+          <li>Name of my owner : <%= @pet.pet_owner.name.capitalize %></li>
+        </ul>
       </table>
     </div>
+  </div>
+  
+  <div
+    id="map"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
   <div>
     <strong><%= link_to "Book this pet 🐶", new_pet_booking_path(@pet) %></strong>
   </div>
 
-</div>
+

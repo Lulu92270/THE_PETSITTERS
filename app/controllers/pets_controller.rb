@@ -6,6 +6,11 @@ class PetsController < ApplicationController
 
   def show
     @pet = Pet.find(params[:id])
+    @markers =
+      {
+        lat: @pet.pet_owner.latitude,
+        lng: @pet.pet_owner.longitude
+      }
   end
 
   def new
