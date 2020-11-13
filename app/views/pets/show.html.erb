@@ -27,6 +27,13 @@
 <br>
 <br>
 
+<div
+  class="map"
+  style="width: 500px; height: 500px; margin: 4px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <div class="container d-flex justify-content-between">
   <div class="pet-card">
     <h4>I am available: 11.11.2020 <%= %>at 12pm<%= %></h4>
@@ -41,12 +48,7 @@
       </ul>
   </div>
 
-    <div
-      class="map"
-      style="width: 500px; height: 500px; margin: 4px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
+    <div style="width: 500px; height: 500px; margin: 4px;"></div>
 </div>
 
 
