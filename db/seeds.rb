@@ -21,7 +21,7 @@ ADDRESS_ARRAY = ["Alfama, Lisbon", "Graça, Lisbon", "Marques do Pombal, Lisbon"
 
 i = 0
 ADDRESS_ARRAY.each do |address|
-  user = User.create!(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::FunnyName.unique.name, role: "petowner", address: address )
+  user = User.create!(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::FunnyName.unique.name, role: "Pet owner", address: address )
   puts "\n#{user.name.capitalize} is a #{user.role.upcase} and has 2 pets: "
   s = 0
   2.times do
