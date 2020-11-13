@@ -21,11 +21,7 @@ ADDRESS_ARRAY = ["Alfama, Lisbon", "Graça, Lisbon", "Marques do Pombal, Lisbon"
 
 i = 0
 ADDRESS_ARRAY.each do |address|
-
-  user = User.new(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::TvShows::TwinPeaks.character.unique, role: "Pet owner", address: address )
-  user.photo.attach(io: URI.open(profile_img), filename: 'profile.jpg', content_type: 'image/jpg')
-  user.save!
-
+  user = User.create!(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::FunnyName.unique.name, role: "Pet owner", address: address )
   puts "\n#{user.name.capitalize} is a #{user.role.upcase} and has 2 pets: "
   s = 0
   2.times do
@@ -52,10 +48,11 @@ pet.save!
 puts "Creating Marion as a Petsitter..."
 user = User.create!(email: "marion@marion.com", password: "123456", role: "Pet sitter", name: "marion", address: ADDRESS_ARRAY.sample)
 
-# puts "\nCreating Bookings...\n"
-# 5.times do
-#   my_date = Faker::Date.between(from: 30.days.ago, to: Date.today)
-#   booking = Booking.create!(date: my_date, user: User.all.sample, pet: Pet.all.sample)
-#   booking.save
-#   puts "#{booking.user.name.capitalize} has booked on #{booking.date} for his #{booking.pet.species} named #{booking.pet.name.capitalize}"
-# end
+puts "\nCreating Bookings...\n"
+5.times do
+  my_date = Faker::Date.between(from: 30.days.ago, to: Date.today)
+  booking = Booking.create!(date: my_date, user: User.all.sample, pet: Pet.all.sample)
+  booking.save
+  puts "#{booking.user.name.capitalize} has booked on #{booking.date} for his #{booking.pet.species} named #{booking.pet.name.capitalize}"
+end
+
