@@ -2,10 +2,8 @@
   <h1>The Petsitters</h1>
   <h3>Welcome, <%= current_user.name.capitalize %>!</h3>
   <br>
-  <h4>Your profile status: <%= @user.role %></h4>
+  <h4>Your profile status: <%= current_user.role %></h4>
 </div>
-
-
 
 <div class="container d-flex justify-content-around p-4">
   <%= link_to pets_path do %>
@@ -19,7 +17,9 @@
       <%= f.button :submit, class: 'btn effect' %>
     <% end %>
   </div>
+
   <% if @user.role === "Pet owner" %>
+
     <%= link_to new_pet_path do %>
       <div class="text-center btn-effect">
         <h4>Add my pet!</h4>
@@ -27,28 +27,52 @@
     <% end %>
   <% end %>
 </div>
-
-<div class="booking mt-5">
-  <% if @user_bookings.any? %>
-    <div class="container">
-      <div class="row pb-5 mb-5">
-        <% @user_bookings.each do |user_booking| %>
-          <div class="col-4">
-            <div class="card">
-                <%= cl_image_tag(user_booking.pet.photo.key, class: "w-100") %>
-              <h3>Hello, I'm <%= user_booking.pet.name.capitalize %>!</h3>
-              <p>I am booked on <%= user_booking.date %></p>
+<% if current_user.role == "petowner" %>
+  <div class="booking mt-5">
+    <% if @pets.any? %>
+      <div class="container">
+        <div class="row pb-5 mb-5">
+          <% @pets.each do |pet| %>
+            <div class="col-4">
+              <div class="card">
+                  <%= cl_image_tag(pet.photo.key, class: "w-100") %>
+                <h3>Hello, I'm <%= pet.name.capitalize %>!</h3>
+              </div>
             </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
-    </div>
-  <% else %>
-      <div class="container text-center">
-        <h4 class="header">No bookings yet!</h4>
+    <% else %>
+        <div class="container text-center">
+          <h4 class="header">No bookings yet!</h4>
+        </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="booking mt-5">
+    <% if @user_bookings.any? %>
+      <div class="container">
+        <div class="row pb-5 mb-5">
+          <% @user_bookings.each do |user_booking| %>
+            <div class="col-4">
+              <div class="card">
+                  <%= cl_image_tag(user_booking.pet.photo.key, class: "w-100") %>
+                <h3>Hello, I'm <%= user_booking.pet.name.capitalize %>!</h3>
+                <p>I am booked on <%= user_booking.date %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
       </div>
-  <% end %>
-</div>
+    <% else %>
+        <div class="container text-center">
+          <h4 class="header">No bookings yet!</h4>
+        </div>
+    <% end %>
+  </div>
+<% end %>
+
+
 
 
 
