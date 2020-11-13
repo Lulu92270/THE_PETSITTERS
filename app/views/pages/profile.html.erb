@@ -1,7 +1,9 @@
 <div class="banner">
   <h1>The Petsitters</h1>
   <h3>Welcome, <%= current_user.name.capitalize %>!</h3>
-  <br>
+  <div class="avatar p-3">
+    <%= cl_image_tag(current_user.photo.key, class: "w-100") %>
+  </div>
   <h4>Your profile status: <%= current_user.role %></h4>
 </div>
 
@@ -19,7 +21,6 @@
   </div>
 
   <% if @user.role === "Pet owner" %>
-
     <%= link_to new_pet_path do %>
       <div class="text-center btn-effect">
         <h4>Add my pet!</h4>
