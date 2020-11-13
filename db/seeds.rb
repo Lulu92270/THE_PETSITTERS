@@ -38,15 +38,15 @@ ADDRESS_ARRAY.each do |address|
   puts "\n"
 end
 
-puts "\nCreating Lola has a Petowner..."
+puts "\nCreating Lola as a Petowner..."
 file = URI.open('https://omg.blog/wp-content/uploads/2018/09/yorikokoro.jpg')
-user = User.create!(email: "lola@lola.com", password: "123456", role: "petowner", name: "lola", address: ADDRESS_ARRAY.sample)
+user = User.create!(email: "lola@lola.com", password: "123456", role: "Pet owner", name: "lola", address: ADDRESS_ARRAY.sample)
 pet = Pet.new(name: "toto", species: "dog", pet_owner: user)
 pet.photo.attach(io: file, filename: 'toto.jpeg', content_type: 'image/jpeg')
 pet.save!
 
-puts "Creating Marion has a Petsitter..."
-user = User.create!(email: "marion@marion.com", password: "123456", role: "petsitter", name: "marion", address: ADDRESS_ARRAY.sample)
+puts "Creating Marion as a Petsitter..."
+user = User.create!(email: "marion@marion.com", password: "123456", role: "Pet sitter", name: "marion", address: ADDRESS_ARRAY.sample)
 
 puts "\nCreating Bookings...\n"
 5.times do
@@ -55,3 +55,4 @@ puts "\nCreating Bookings...\n"
   booking.save
   puts "#{booking.user.name.capitalize} has booked on #{booking.date} for his #{booking.pet.species} named #{booking.pet.name.capitalize}"
 end
+

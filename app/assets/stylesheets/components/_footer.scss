@@ -3,6 +3,7 @@
   bottom: 0;
   height: 20%;
   width: 100%;
+  margin-bottom: 16px;
   background: #EBFFFE;
   display: flex;
   flex-direction: column;
@@ -10,7 +11,12 @@
   justify-content: center;
   height: 100px;
   padding: 0px 50px;
-  color: #0f1108;
+  color: light-gray;
+    p {
+      opacity: 0.5;
+      color: dark-gray;
+      margin: 0;
+    }
 }
 .footer-links {
   display: flex;
@@ -26,4 +32,3 @@
 .footer-links a:hover {
   opacity: 1;
 }
-
