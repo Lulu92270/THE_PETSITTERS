@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <h1>Welcome to The Petsitters community !</h1>
+      <h1> Let's take care of <%= pet.name.capitalize %>!</h1>
 
        <div id='flat-booking-dates' data-unavailable="<%= @flat.unavailable_dates.to_json %>">
         <% if current_user.id != @flat.user_id  %>
@@ -20,3 +20,5 @@
     </div>
   </div>
 </div>
+
+

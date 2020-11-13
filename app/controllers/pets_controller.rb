@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
+
   def index
     @pets = Pet.all
   end
@@ -27,9 +28,18 @@ class PetsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @pet = Pet.find(params[:id])
+    @pet.update(pet_params)
+    redirect_to pet_path(@pet)
+  end
+
   private
 
   def pet_params
-    params.require(:pet).permit(:name, :species, :photo)
+    params.require(:pet).permit(:name, :species, :photo, :start_date, :end_date)
   end
 end
