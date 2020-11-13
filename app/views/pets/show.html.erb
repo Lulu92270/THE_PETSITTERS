@@ -1,23 +1,24 @@
 <div class="banner">
-  <%= link_to pets_path do %>
+  <div class="banner-content d-flex align-items-center">
+    <%= link_to pets_path do %>
     <div class="text-center btn-effect">
       <h4>Back to pets list</h4>
     </div>
-  <% end %>
+    <% end %>
 
-  <h1><%= @pet.name.capitalize %></h1>
-  <!-- Put button to request booking here -->
-  <%= link_to new_pet_booking_path(@pet) do %>
+    <h1><%= @pet.name.capitalize %></h1>
+    <!-- Put button to request booking here -->
+    <%= link_to new_pet_booking_path(@pet) do %>
     <div class="text-center btn-effect">
       <h4>Book this pet 🐶</h4>
     </div>
-  <% end %>
-
+    <% end %>
+  </div>
 </div>
 
 
 <div class="container-fluid d-flex justify-content-around p-3">
-  <div class="p-4">
+  <div class="pet-card">
     <% if @pet.photo.attached? %>
       <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
     <% end %>

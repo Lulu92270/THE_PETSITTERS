@@ -11,7 +11,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %>-<%= action_name %>">
 
       <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
             <li class="nav-item dropdown">
               <span class="navbar-toggler-icon" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></span>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <% if user_signed_in? %>  
+                <% if user_signed_in? %>
                   <%= link_to profile_path do %>
                     <div class="dropdown-item btn-effect">
                         My account

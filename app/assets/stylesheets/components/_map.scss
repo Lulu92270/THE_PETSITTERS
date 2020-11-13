@@ -1,6 +1,8 @@
 .mapboxgl {
   max-width: 200px;
   height: 100vh;
+  position: sticky;
+  top: 0;
 }
 
 .mapboxgl-popup-content {
