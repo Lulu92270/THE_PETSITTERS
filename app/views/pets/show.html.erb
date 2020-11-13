@@ -1,4 +1,4 @@
-<div class="banner">
+<div class="banner sticky">
   <div class="banner-content d-flex align-items-center">
     <%= link_to pets_path do %>
     <div class="text-center btn-effect">
@@ -16,23 +16,33 @@
   </div>
 </div>
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
-<div class="container-fluid d-flex justify-content-around p-3">
+<div class="container d-flex justify-content-between">
   <div class="pet-card">
+    <h4>I am available: 11.11.2020 <%= %>at 12pm<%= %></h4>
     <% if @pet.photo.attached? %>
       <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
     <% end %>
     <br>
       <ul>
-        <li>My name: <%= @pet.name.capitalize %></li>
-        <li>My species: <%= @pet.species %></li>
-        <li>The name of my owner: <%= @pet.pet_owner.name.capitalize %></li>
-        <li>I live in: <%= @pet.pet_owner.address %></li>
+        <li>I am a: <strong><%= @pet.species %></strong></li>
+        <li>My owner is: <strong><%= @pet.pet_owner.name.capitalize %></strong></li>
+        <li>I live in: <strong><%= @pet.pet_owner.address %></strong></li>
       </ul>
   </div>
 
     <div
-      id="map"
+      class="map"
       style="width: 500px; height: 500px; margin: 4px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
