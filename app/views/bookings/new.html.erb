@@ -8,10 +8,11 @@
         </div>
       <% end %>
       <%# <% raise %>
-      <h1>When do you want to book <%= @pet.name %> ? </h1>
+      <h1>When is <%= @pet.name %> available? </h1>
 
       <%= simple_form_for [ @pet, @booking ] do |f| %>
-        <%= f.input :date %>
+            <%= f.input :start_date, as: :string, type: :text %>
+            <%= f.input :end_date, as: :string, type: :text %>
 
         <%= f.button :submit, class: 'btn' %>
       <% end %>
