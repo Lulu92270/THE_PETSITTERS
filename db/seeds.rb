@@ -22,7 +22,7 @@ ADDRESS_ARRAY = ["Alfama, Lisbon", "Graça, Lisbon", "Marques do Pombal, Lisbon"
 i = 0
 ADDRESS_ARRAY.each do |address|
 
-  user = User.create!(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::TvShows::TwinPeaks.character, role: "petowner", address: address )
+  user = User.create!(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::TvShows::TwinPeaks.character, role: "Pet owner", address: address )
   user.photo.attach(io: URI.open(profile_img), filename: 'profile.jpg', content_type: 'image/jpg')
   user.save!
 
