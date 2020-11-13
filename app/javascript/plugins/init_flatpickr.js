@@ -10,9 +10,10 @@ const initFlatpickr = () => {
     endDateInput.disabled = true
 
   flatpickr(startDateInput, {
-    mode: "range",
     minDate: "today",
     dateFormat: "Y-m-d",
+    enableTime: true,
+    dateFormat: "H:i",
   });
 
   console.log('im in the file')
@@ -23,7 +24,9 @@ const initFlatpickr = () => {
     }
     flatpickr(endDateInput, {
       minDate: e.target.value,
-      dateFormat: "Y-m-d"
+      dateFormat: "Y-m-d",
+      enableTime: true,
+      dateFormat: "H:i",
       });
     })
   };

@@ -55,10 +55,14 @@
         <div class="row pb-5 mb-5">
           <% @user_bookings.each do |user_booking| %>
             <div class="col-4">
+
               <div class="card">
+                <%= link_to edit_pet_path(user_booking.pet) do %>
                   <%= cl_image_tag(user_booking.pet.photo.key, class: "w-100") %>
+                <% end %>
                 <h3>Hello, I'm <%= user_booking.pet.name.capitalize %>!</h3>
                 <p>I am booked on <%= user_booking.date %></p>
+                <%= link_to 'Availabities', new_pet_booking_path(user_booking.pet) %>
               </div>
             </div>
           <% end %>

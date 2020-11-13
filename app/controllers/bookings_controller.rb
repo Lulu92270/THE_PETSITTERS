@@ -1,9 +1,6 @@
 class BookingsController < ApplicationController
   before_action :set_pet
 
-  validates :start_date, :end_date, presence: true
-  validate :end_date_after_start_date
-
   def new
     @booking = Booking.new
   end
@@ -27,7 +24,7 @@ class BookingsController < ApplicationController
   end
 
   def bookings_params
-    params.require(:booking).permit(:date, :user_id, :pet_id)
+    params.require(:booking).permit(:date, :user_id, :pet_id, :start_date, :end_date)
   end
 
   def end_date_after_start_date

@@ -1,22 +1,15 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-8">
-      <h1> Let's take care of <%= pet.name.capitalize %>!</h1>
+      <h1> Let's take care of <%= @pet.name.capitalize %>!</h1>
 
-       <div id='flat-booking-dates' data-unavailable="<%= @flat.unavailable_dates.to_json %>">
-        <% if current_user.id != @flat.user_id  %>
-          <%= simple_form_for ([@pet, @booking]) do |f| %>
+          <%= simple_form_for (@pet) do |f| %>
             <%= f.input :name %>
             <%= f.input :species %>
             <%= f.input :photo, as: :file %>
-            <%= f.input :start_date, as: :string, type: :text %>
-            <%= f.input :end_date, as: :string, type: :text %>
 
             <%= f.button :submit, class: 'btn' %>
             <% end %>
-          <% end %>
-        </div>
-
     </div>
   </div>
 </div>
