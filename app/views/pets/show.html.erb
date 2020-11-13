@@ -27,6 +27,7 @@
 <br>
 <br>
 
+<<<<<<< HEAD
 <div
   class="map"
   style="width: 500px; height: 500px; margin: 4px;"
@@ -35,6 +36,9 @@
 </div>
 
 <div class="container d-flex justify-content-between">
+=======
+<div class="container d-flex justify-content-between p-16 w-100">
+>>>>>>> 7d4c25229b4da79c6674a1e2c2e541c24d7c4967
   <div class="pet-card">
     <h4>I am available: 11.11.2020 <%= %>at 12pm<%= %></h4>
     <% if @pet.photo.attached? %>
@@ -48,7 +52,16 @@
       </ul>
   </div>
 
+<<<<<<< HEAD
     <div style="width: 500px; height: 500px; margin: 4px;"></div>
+=======
+    <div
+      id="map"
+      style="width: 500px; height: 500px; margin: 4px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+>>>>>>> 7d4c25229b4da79c6674a1e2c2e541c24d7c4967
 </div>
 
 
