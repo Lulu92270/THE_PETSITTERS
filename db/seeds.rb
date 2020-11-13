@@ -17,11 +17,15 @@ img_names.size.times do
   i += 1
 end
 
+profile_img = Cloudinary::Uploader.upload("profile.jpg")['url']
+
 ADDRESS_ARRAY = ["Alfama, Lisbon", "Graça, Lisbon", "Marques do Pombal, Lisbon", "Bario Alto, Lisbon", "Cascais" ]
 
 i = 0
 ADDRESS_ARRAY.each do |address|
-  user = User.create!(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::FunnyName.unique.name, role: "Pet owner", address: address )
+  user = User.new(email: Faker::Internet.unique.email, password: Faker::Alphanumeric.alpha(number: 6), name: Faker::FunnyName.unique.name, role: "Pet owner", address: address )
+  user.photo.attach(io: URI.open(profile_img), filename: 'profile.jpg', content_type: 'image/jpg')
+  user.save!
   puts "\n#{user.name.capitalize} is a #{user.role.upcase} and has 2 pets: "
   s = 0
   2.times do
@@ -40,13 +44,18 @@ end
 
 puts "\nCreating Lola as a Petowner..."
 file = URI.open('https://omg.blog/wp-content/uploads/2018/09/yorikokoro.jpg')
-user = User.create!(email: "lola@lola.com", password: "123456", role: "Pet owner", name: "lola", address: ADDRESS_ARRAY.sample)
+
+user = User.new(email: "lola@lola.com", password: "123456", role: "Pet owner", name: "lola", address: ADDRESS_ARRAY.sample)
+user.photo.attach(io: URI.open(profile_img), filename: 'profile.jpg', content_type: 'image/jpg')
+user.save!
 pet = Pet.new(name: "toto", species: "dog", pet_owner: user)
 pet.photo.attach(io: file, filename: 'toto.jpeg', content_type: 'image/jpeg')
 pet.save!
 
 puts "Creating Marion as a Petsitter..."
-user = User.create!(email: "marion@marion.com", password: "123456", role: "Pet sitter", name: "marion", address: ADDRESS_ARRAY.sample)
+user = User.new(email: "marion@marion.com", password: "123456", role: "Pet sitter", name: "marion", address: ADDRESS_ARRAY.sample)
+user.photo.attach(io: URI.open(profile_img), filename: 'profile.jpg', content_type: 'image/jpg')
+user.save!
 
 puts "\nCreating Bookings...\n"
 5.times do
