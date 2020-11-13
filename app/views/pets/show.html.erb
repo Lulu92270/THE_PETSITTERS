@@ -28,6 +28,7 @@
 <br>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div
   class="map"
   style="width: 500px; height: 500px; margin: 4px;"
@@ -39,8 +40,12 @@
 =======
 <div class="container d-flex justify-content-between p-16 w-100">
 >>>>>>> 7d4c25229b4da79c6674a1e2c2e541c24d7c4967
+=======
+
+<div class="container d-flex justify-content-between p-16 w-100">
+>>>>>>> 29c8fb78231de5e457595451b576ada838556920
   <div class="pet-card">
-    <h4>I am available: 11.11.2020 <%= %>at 12pm<%= %></h4>
+    <h4>I am available</h4>
     <% if @pet.photo.attached? %>
       <%= cl_image_tag @pet.photo.key , height: 300, width: 400, crop: :fill %>
     <% end %>
@@ -51,6 +56,7 @@
         <li>I live in: <strong><%= @pet.pet_owner.address %></strong></li>
       </ul>
   </div>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     <div style="width: 500px; height: 500px; margin: 4px;"></div>
@@ -62,9 +68,16 @@
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 >>>>>>> 7d4c25229b4da79c6674a1e2c2e541c24d7c4967
+=======
+>>>>>>> 29c8fb78231de5e457595451b576ada838556920
 </div>
 
-
+<div
+  id="map"
+  style="width: 500px; height: 500px; margin: 4px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 
 
 

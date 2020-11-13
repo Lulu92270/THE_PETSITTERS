@@ -1,5 +1,4 @@
 .mapboxgl {
-  max-width: 200px;
   height: 100vh;
   position: sticky;
   top: 0;
@@ -10,17 +9,7 @@
   font-family: 'Raleway', sans-serif;
 }
 
-<<<<<<< HEAD
 .map {
   position: absolute;
   top: 400px; right: 0px;
 }
-=======
-#map {
-  max-width: 100vh !important;
-  height: 100vh;
-  position: sticky;
-  right: 0;
-  top: 16px;
-}
->>>>>>> 7d4c25229b4da79c6674a1e2c2e541c24d7c4967
