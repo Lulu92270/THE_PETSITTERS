@@ -31,9 +31,18 @@ import "bootstrap";
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-document.addEventListener('turbolinks:load', () => {
-  if (document.querySelector(".pets-show")) {
-     initMapbox();
-  }
+import { initFlatpickr } from '../plugins/init_flatpickr';
 
-})
+document.addEventListener('turbolinks:load', () => {
+    if (document.querySelector(".pets-show")) {
+      initMapbox();
+    }
+
+    if (document.querySelector(".bookings-new")) {
+      initFlatpickr();
+    }
+  })
+
+
+
+

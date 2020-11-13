@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/profile', to: 'pages#profile' # in pages controller
   patch '/change_role', to: 'pages#change_role'
 
-  resources :pets, only: [ :index, :show, :new, :create ] do
+  resources :pets, only: [ :index, :show, :new, :create, :edit, :update] do
     resources :bookings, only: [ :new, :create ]
   end
 
