@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :pets, foreign_key: "pet_owner_id", class_name: "Pet"
 
 
-  ROLE = ["petsitter", "petowner"]
+  ROLE = ["Pet sitter", "Pet owner"]
   validates :name, :address, presence: true
   validates :role, inclusion: { in: ROLE }
 end

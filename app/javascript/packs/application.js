@@ -32,8 +32,10 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
-  initMapbox();
-});
+    if (document.querySelector(".pets-show")) {
+      initMapbox();
+    }
+  })
 
 
 import { initFlatpickr } from '../plugins/init_flatpickr';
